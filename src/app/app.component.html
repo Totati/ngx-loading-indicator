@@ -1,0 +1,7 @@
+<div class="buttons">
+  <button (click)="onShowSpinner()" mat-raised-button>
+    show {{ spinnerIndicator.refNumber$ | async }}
+  </button>
+  <button (click)="onHideSpinner()" mat-raised-button>hide</button>
+  <button (click)="onResetSpinner()" mat-raised-button>reset</button>
+</div>
