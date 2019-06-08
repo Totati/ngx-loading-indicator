@@ -1,27 +1,43 @@
-# Demo
+[![npm version](http://img.shields.io/npm/v/ngx-loading-indicator.svg)](https://npmjs.org/package/ngx-loading-indicator)
+[![Downloads](http://img.shields.io/npm/dm/ngx-loading-indicator.svg)](https://npmjs.org/package/ngx-loading-indicator)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+# Purpose
 
-## Development server
+Easily show and hide a loading indicator using a service.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Usage
 
-## Code scaffolding
+Install from npm (https://www.npmjs.com/package/ngx-loading-indicator)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm install --save ngx-loading-indicator
+```
 
-## Build
+Import the indicator module to your module
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+import {
+  NgxBarIndicatorModule,
+  NgxSpinnerIndicatorModule
+} from "ngx-loading-indicator";
+```
 
-## Running unit tests
+Inject the services and use them.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```javascript
+import {
+  NgxBarIndicatorService,
+  NgxSpinnerIndicatorService
+} from 'ngx-loading-indicator';
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+export class AppComponent {
+  constructor(
+    public spinnerIndicator: NgxSpinnerIndicatorService,
+    public barIndicator: NgxBarIndicatorService,
+  ) {
+    this.spinnerIndicator.show();
+    this.spinnerIndicator.hide();
+    this.spinnerIndicator.reset();
+  }
+}
+```

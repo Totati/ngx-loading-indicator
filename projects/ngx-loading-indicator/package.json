@@ -5,5 +5,21 @@
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0",
     "@angular/material": "^8.0.0"
-  }
+  },
+  "author": {
+    "name": "Totati",
+    "url": "https://twitter.com/48Aca"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/Totati/ngx-loading-indicator"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "spinner",
+    "progress-spinner",
+    "progress-bar"
+  ]
 }

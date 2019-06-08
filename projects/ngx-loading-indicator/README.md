@@ -1,24 +1,43 @@
-# NgxLoadingIndicator
+[![npm version](http://img.shields.io/npm/v/ngx-loading-indicator.svg)](https://npmjs.org/package/ngx-loading-indicator)
+[![Downloads](http://img.shields.io/npm/dm/ngx-loading-indicator.svg)](https://npmjs.org/package/ngx-loading-indicator)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+# Purpose
 
-## Code scaffolding
+Easily show and hide a loading indicator using a service.
 
-Run `ng generate component component-name --project ngx-loading-indicator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-loading-indicator`.
-> Note: Don't forget to add `--project ngx-loading-indicator` or else it will be added to the default project in your `angular.json` file. 
+# Usage
 
-## Build
+Install from npm (https://www.npmjs.com/package/ngx-loading-indicator)
 
-Run `ng build ngx-loading-indicator` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm install --save ngx-loading-indicator
+```
 
-## Publishing
+Import the indicator module to your module
 
-After building your library with `ng build ngx-loading-indicator`, go to the dist folder `cd dist/ngx-loading-indicator` and run `npm publish`.
+```javascript
+import {
+  NgxBarIndicatorModule,
+  NgxSpinnerIndicatorModule
+} from "ngx-loading-indicator";
+```
 
-## Running unit tests
+Inject the services and use them.
 
-Run `ng test ngx-loading-indicator` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```javascript
+import {
+  NgxBarIndicatorService,
+  NgxSpinnerIndicatorService
+} from 'ngx-loading-indicator';
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+export class AppComponent {
+  constructor(
+    public spinnerIndicator: NgxSpinnerIndicatorService,
+    public barIndicator: NgxBarIndicatorService,
+  ) {
+    this.spinnerIndicator.show();
+    this.spinnerIndicator.hide();
+    this.spinnerIndicator.reset();
+  }
+}
+```
